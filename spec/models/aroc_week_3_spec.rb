@@ -32,7 +32,7 @@ describe 'ActiveRecord Obstacle Course, Week 3' do
     # ------------------------------------------------------------
 
     # Expectation
-    expect(users).to eq(expected_result)
+    expect(users.sort).to eq(expected_result.sort)
   end
 
   it '17. returns the name of items associated with a specific order' do
