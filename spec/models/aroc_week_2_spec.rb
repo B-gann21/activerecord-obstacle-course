@@ -70,13 +70,12 @@ describe 'ActiveRecord Obstacle Course, Week 2' do
       @item_1, @item_4, @item_9, @item_10,
       @item_3, @item_8, @item_7
     ]
-
     # ----------------------- Using Ruby -------------------------
     # items = Item.all.map { |item| item unless items_not_included.include?(item) }.compact
     # ------------------------------------------------------------
 
     # ------------------ Using ActiveRecord ----------------------
-    items = expected_result.map { |i| Item.find(i.id) }
+    items = Item.where.not(id: items_not_included)
     # ------------------------------------------------------------
 
     # Expectation
